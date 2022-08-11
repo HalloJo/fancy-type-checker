@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  background-color: #1E4733;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper { 
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+.logo {
+  width: 10vw;
+}
