@@ -1,14 +1,16 @@
-import React, { ReactElement } from 'react'
+import React, { forwardRef, ReactElement } from 'react'
 import "./Output.scss"
 
 type OutputProps = {
     output: string
 }
 
-const Output = ({output}:OutputProps): ReactElement => {
+const Output = forwardRef<HTMLDivElement, OutputProps>(({output}, ref): ReactElement => {
     return (
-        <div className='output'>{output}</div>
+        <div className='output' ref={ref}>
+            <h1 className='outputText'>{output}</h1>
+        </div>
     )
-}
+})
 
 export default Output
