@@ -1,5 +1,7 @@
+@import "../../styles/_variables.scss";
+
 .typeOptionsMenu {
-  background-color: #275a41;
+  background-color: $pineGreen;
   display: flex;
   align-items: flex-start;
   flex-direction: column;

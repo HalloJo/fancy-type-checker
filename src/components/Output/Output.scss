@@ -1,0 +1,12 @@
+@import "../../styles/_variables.scss";
+
+.output {
+  background-color: $darkGreen;
+  width: 75%;
+  color: white;
+  font-weight: 400;
+  font-size: 4rem;
+  padding: $standardPadding;
+  text-align: left;
+  color: $brightGreen;
+}
