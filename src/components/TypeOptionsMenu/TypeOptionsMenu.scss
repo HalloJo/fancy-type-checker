@@ -9,26 +9,4 @@
   width: 25%;
   padding: 40px;
   text-align: left;
-
-  &__logo {
-    color: $brightGreen;
-  }
-
-  &__logoPart {
-    font-family: "Edu QLD Beginner", cursive;
-    font-weight: 500;
-    font-size: 2.5rem;
-    opacity: 0;
-    transform: translateX(-20px);
-
-    &:nth-child(1) {
-      margin: 0 0 0 2rem;
-    }
-    &:nth-child(2) {
-      margin: -0.5rem 0 0 0;
-    }
-    &:nth-child(3) {
-      margin: 0 0 0 3rem;
-    }
-  }
 }
