@@ -1,0 +1,29 @@
+@import "../../styles/_variables.scss";
+
+.inputElement {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    font-weight: 700;
+    color: $brightGreen;
+    margin: 0 0 10px;
+  }
+
+  input {
+    border: none;
+    padding: 15px;
+    width: 100%;
+    background-color: $darkGreen;
+    border-radius: 10px;
+    color: white;
+
+    &::placeholder {
+      color: $brightGreen;
+    }
+
+    &:focus {
+      outline: 1px solid $brightGreen;
+    }
+  }
+}

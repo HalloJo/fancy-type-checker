@@ -2,27 +2,22 @@
 import { forwardRef, ReactElement, useState }  from 'react';
 import InputElement from '../InputElement/InputElement';
 import Logo from '../Logo/Logo';
-import { inputElementData } from '../../data/inputElementData'
 import "./TypeOptionsMenu.scss"
 
+type TypeOptionsProps = {
+    output: string,
+    onChange: (value: string) => void
+}
 
-const TypeOptionsMenu = forwardRef<HTMLDivElement>((props, ref): ReactElement => {
+const TypeOptionsMenu = forwardRef<HTMLDivElement, TypeOptionsProps>((props, ref): ReactElement => {
 
-    const [inputData, setInputData] = useState(inputElementData)
+    const {output, onChange} = props
 
     return (
-        <menu className='typeOptionsMenu' >
+        <menu className="typeOptionsMenu" >
             <Logo ref={ref} />
-            <div className="optionsWrapper">
-                {inputData.map((input) => {
-
-                    const {label, type, placeholder, value, min, max, checked, forLabel} = input
-
-                    return (
-                        <InputElement placeholder={placeholder} type={type} label={label} forLabel={forLabel} checked={checked} value={value} min={min} max={max}  />
-
-                    )
-                })}
+            <div className="typeOptionsMenu__options">
+                <InputElement className="regular" placeholder="Type your text here" type="text" label="Demo text" forLabel="Demo text" value={output} onChange={(output)=> onChange(output)} />
             </div>
         </menu>
     )

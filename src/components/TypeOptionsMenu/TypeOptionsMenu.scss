@@ -2,11 +2,13 @@
 
 .typeOptionsMenu {
   background-color: $pineGreen;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
+  display: block;
   height: 100vh;
   width: 25%;
   padding: 40px;
   text-align: left;
+
+  &__options {
+    margin: 30px 0 0 0;
+  }
 }

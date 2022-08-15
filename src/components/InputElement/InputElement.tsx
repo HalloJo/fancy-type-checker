@@ -3,24 +3,22 @@ import "./InputElement.scss"
 
 type InputProps = {
     label: string,
+    className: string,
     type: string,
     forLabel: string,
     placeholder?: string,
     value?: string | number,
-    checked?: boolean,
-    min?: number
-    max?: number
-    onChange?: (value: string) => void
+    onChange: (value: string) => void
 }
 
 const InputElement = forwardRef<HTMLDivElement, InputProps>((props, ref):ReactElement => {
 
-    const {label, type, placeholder, value, onChange, min, max, checked, forLabel} = props
+    const {label, type, placeholder, value, onChange, forLabel, className} = props
 
     return (
-        <div>
-            <label htmlFor={forLabel}>{label}</label>
-            <input type={type} placeholder={placeholder} min={min} max={max} value={value} checked={checked} />
+        <div className="inputElement" ref={ref}>
+            <label className="inputElement__label" htmlFor={forLabel}>{label}</label>
+            <input className={className} type={type} placeholder={placeholder} value={value} onChange={(event)=> onChange(event.target.value) }  />
         </div>
     )
 }) 

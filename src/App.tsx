@@ -1,4 +1,4 @@
-import { useEffect, useRef} from 'react';
+import { useEffect, useRef, useState} from 'react';
 import { Back, gsap } from 'gsap';
 import SplitText from 'gsap/SplitText';
 import './App.scss';
@@ -13,6 +13,8 @@ const App = () => {
   const outputRef = useRef(null)
   const outputText = gsap.utils.selector(outputRef)
   
+  const [output, setOutput] = useState("The quick brown fox jumps over the lazy dog")
+
   
   useEffect(()=>{
     const timeline = gsap.timeline({duration: 0.3})
@@ -52,8 +54,8 @@ const App = () => {
 
   return (
     <div className="App">
-        <TypeOptionsMenu ref={logoRef} />
-        <Output ref={outputRef} output='The quick brown fox jumps over the lazy dog' />
+        <TypeOptionsMenu ref={logoRef} onChange={setOutput} output={output} />
+        <Output ref={outputRef} output={output} />
     </div>
   );
 }
